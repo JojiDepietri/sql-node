@@ -8,4 +8,13 @@ var connection = mysql.createConnection({
     database: 'musica'
 });
 
+connection.connect();
+ 
+connection.query('SELECT * FROM cancion', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results);
+});
+ 
+connection.end();
+
 module.exports = connection;
